@@ -1,0 +1,16 @@
+Bootstrap: docker
+From: python:3.9-slim
+
+%post
+    # Install NumPy
+    apt-get update && apt-get install -y python3-pip
+    pip install numpy
+
+%environment
+    # Set environment variables
+    export PATH=/usr/local/bin:$PATH
+
+%labels
+    Author "Your Name"
+    Version "1.0"
+    Description "A Singularity container with Python and NumPy"
